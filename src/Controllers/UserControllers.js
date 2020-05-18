@@ -12,10 +12,10 @@ module.exports = {
     },
 
 
-  //  async index(req,res){                                                                           //LISTA O USUARIO POR ID
-
-   // },
-
+    async indexforid(req,res){                                                     //LISTA O USUARIO POR ID
+        const user = await User.findAll({ where: { id: req.params.id }});
+        return res.status(200).send(user)
+    },
 
 
 
